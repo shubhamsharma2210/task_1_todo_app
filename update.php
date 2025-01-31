@@ -50,6 +50,7 @@ if (isset($_POST['task'])) {
             $task = $_POST['task'];
             $validationError = validateTask($task);
         
+            // check validation
             if ($validationError !== "") {
                 header('Location: index.php?error=' . $validationError);
             } else {
