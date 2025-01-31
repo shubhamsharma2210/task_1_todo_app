@@ -63,10 +63,10 @@
                 ?>
             </ul>
         </div>
-        <footer class="footer">
-        <p>© 2025 Your Name. All rights reserved.</p>
-        <p>Powered by <a href="https://example.com">Your Company</a></p>
-    </footer>
+        <!-- <footer class="footer">
+        <p>© 2025 Shubham sharma. Test-1 : Todo App.</p>
+        <p>Powered by <a href="#">Believ-in Technology Pvt ltd.</a></p>
+    </footer> -->
     </div>
 </body>
 </html>

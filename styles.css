@@ -92,7 +92,7 @@ ul{
   
 }
 li{
-    animation: fly-in 2s;
+    animation: fly-in 1s;
     list-style: none;
     border: 2px solid;
     border-color: -moz-linear-gradient(top, #e25050, #e61616);
@@ -156,7 +156,7 @@ a:-webkit-any-link{
 }
 
 .footer {
-    margin-top: 20px;
+    margin-top: 40px;
     background: linear-gradient(90deg, rgba(36,0,16,1) 0%, rgba(121,78,9,0.9836309523809523) 100%, rgba(0,212,255,1) 100%);    text-align: center;
     padding: 10px 0;
     border-top: 2px solid #e7e7e7;
