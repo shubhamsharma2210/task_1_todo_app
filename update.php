@@ -1,5 +1,8 @@
 <?php 
-include('db.php'); // Added missing semicolon
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+include('db.php'); 
 
 $task = "";
 $id = "";
@@ -29,7 +32,8 @@ if (isset($_POST['task'])) {
         if (!$result) {
             die("Error occurred while updating: " . mysqli_error($conn));
         } else {
-            header("Location: index.php?message=Thank You! Task Updated Successfully!");
+            $_SESSION['updt_msg'] = "Thank You! Task Updated Successfully!";
+            header("Location: index.php");
             exit();
         }
     } else {
@@ -50,16 +54,17 @@ if (isset($_POST['task'])) {
             $task = $_POST['task'];
             $validationError = validateTask($task);
         
-            // check validation
             if ($validationError !== "") {
-                header('Location: index.php?error=' . $validationError);
+                $_SESSION['error'] = " $validationError";
+                header('Location: index.php');
             } else {
                 $query = "INSERT INTO task(task) VALUES ('$task')";
                 $result = mysqli_query($conn, $query);
                 if (!$result) {
                     die("Error occurred in insert.php " . mysqli_error($conn));
                 } else {
-                    header('Location: index.php?add_msg=Task Added Successfully....');
+                    $_SESSION['add_task'] = "Task Added Successfully....";
+                    header('Location: index.php');
                 }
             }
         }

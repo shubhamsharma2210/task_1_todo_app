@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("db.php");
     include('update.php');
 ?>
@@ -19,16 +20,23 @@
         <div class="box">
             <div class="error-msg">
                 <?php
-                if(isset($_GET['error'])){
-                    echo "<h2 class='message' style='color: #8B0000'   >". "Error :" . $_GET['error']."</h2>";
+                if(isset($_SESSION['error'])){
+                    echo "<h2 class='message' style='color: #8B0000'   >". "Error :" . $_SESSION['error']."</h2>";
+                    unset($_SESSION['error']);
                 }
 
                 
-                if(isset($_GET['message'])){
-                    echo "<h2 class='message'>". $_GET['message']."</h2>";
+                if(isset($_SESSION['updt_msg'])){
+                    echo "<h2 class='message'>". $_SESSION['updt_msg']."</h2>";
+                    unset($_SESSION['updt_msg']);
                 }
-                if(isset($_GET['add_msg'])){
-                    echo "<h2 class='message' style='color: green'>". 'Success :'. $_GET['add_msg']."</h2>";
+                if(isset($_SESSION['add_task'])){
+                    echo "<h2 class='message' style='color: green'>". 'Success :'. $_SESSION['add_task']."</h2>";
+                    unset($_SESSION['add_task']);
+                }
+                if(isset($_SESSION['dlt_msg'])){
+                    echo "<h2 class='message' style='color:rgba(139, 0, 0, 0.88)'>". 'Deleted :'. $_SESSION['dlt_msg']."</h2>";
+                    unset($_SESSION['dlt_msg']);
                 }
                 ?>
             </div>

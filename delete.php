@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('db.php');
 
 if(isset($_GET['id'])){
@@ -11,7 +12,8 @@ if(isset($_GET['id'])){
     if(!$result){
         die("Error occured in delete.php".mysqli_error());
     }else{
-        header('Location: index.php?message="Your task has deleted successfully"');
+        $_SESSION['dlt_msg'] = "Your task has deleted successfully";
+        header('Location: index.php');
     }
 
 }
