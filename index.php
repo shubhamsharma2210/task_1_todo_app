@@ -20,11 +20,11 @@
         <div class="box">
             <div class="error-msg">
                 <?php
+                // All messages
                 if(isset($_SESSION['error'])){
                     echo "<h2 class='message' style='color: #8B0000'   >". "Error :" . $_SESSION['error']."</h2>";
                     unset($_SESSION['error']);
                 }
-
                 
                 if(isset($_SESSION['updt_msg'])){
                     echo "<h2 class='message'>". $_SESSION['updt_msg']."</h2>";
